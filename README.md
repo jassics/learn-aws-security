@@ -1,17 +1,22 @@
 # AWS Security Related Scripts
 
-h1. Purpose of this repo
+## Purpose of this repo
 
 
-h1. AWS Based Security
+## AWS Based Security
 This repo covers the security aspect of AWS. We will deal with EC2 instances,
 S3, VPC, IAM etc and related security tools available in AWS.
 
-h2. Overview of AWS resources that we will cover
+## Overview of AWS resources that we will cover
 
 
+## ToDOs
+- [x] Create README.md
+- [ ] List all EC2 instances
+- [ ] Get Security config in json format
+- [ ] Write S3 Security Audit guidelines
+- [ ] More to go here
 
+## Troubleshoot
 
-h3. Trobuleshoot
-
-h3. Contact us
+## Contact us
