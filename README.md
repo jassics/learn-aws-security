@@ -31,5 +31,4 @@ S3, VPC, IAM etc and related security tools and scripts available in AWS.
 ## Troubleshoot
 
 ## Contact us
-@Jassics
-@Ratancs
+[jassics]
