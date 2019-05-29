@@ -1,0 +1,9 @@
+*.txt
+*.bak
+vmlinux*
+*.zip
+
+# ignore all logs
+*.log
+*.csv
+__pycache__
