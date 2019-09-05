@@ -165,6 +165,17 @@ Now, if type python3 --version I get Python 3.7.0, and everything works fine :)
 Test if it showing usr/local/bin/python3 now?
 `which python3`
 	/usr/local/bin/python3
+	
+## Issue 3:
+If some module is not installed and got an error. 
+*Error*:
+```Traceback (most recent call last):
+ File "some-filename.py", line 6, in <module>
+   import dns.resolver #import the module
+ModuleNotFoundError: No module named 'dns'
+```
+*Solution*:
+`pip3 install dnspython`
 
 # Contact us
 [jassics]
