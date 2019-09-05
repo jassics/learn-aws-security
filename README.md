@@ -105,7 +105,8 @@ Check the permissions.*
 *Solution:* `sudo pip3 install awscli --upgrade --user` or `sudo pip install awscli --upgrade --user`
 
 ## Issue 2:
-If you have somehow messed with brew and python installation. Run below command in Mac for fresh installation.
+If you have somehow messed with brew and python installation.I am more concerned for Python3 though.
+Run below command in Mac for fresh installation.
 You might have installed python from the official site instead of via brew. Open a terminal window and let's try to fix this: 
 
 1. First, let's uninstall previous Python versions:
@@ -150,6 +151,20 @@ This is the problem: These paths don't exist. Comment the $PATH editions (or era
     `brew install python3`
 
 Now, if type python3 --version I get Python 3.7.0, and everything works fine :)
+
+4. ## If it says it’s already installed and you just need to link it. Then do the below steps:
+
+*Error:* 
+    `brew install python3`
+	Warning: python 3.7.4 is already installed, it's just not linked
+	You can use `brew link python` to link this version.
+
+*Solution:* `brew link python`
+	Linking /usr/local/Cellar/python/3.7.4... 33 symlinks created
+
+Test if it showing usr/local/bin/python3 now?
+`which python3`
+	/usr/local/bin/python3
 
 # Contact us
 [jassics]
