@@ -152,7 +152,7 @@ This is the problem: These paths don't exist. Comment the $PATH editions (or era
 
 Now, if type python3 --version I get Python 3.7.0, and everything works fine :)
 
-4. ## If it says it’s already installed and you just need to link it. Then do the below steps:
+4. If it says it’s already installed and you just need to link it. Then do the below steps:
 
 *Error:* 
     `brew install python3`
