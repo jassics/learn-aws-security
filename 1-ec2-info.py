@@ -1,7 +1,5 @@
 from collections import defaultdict
-
 import boto3
-
 
 # Instance count client interface
 ec2 = boto3.client('ec2', region_name='us-east-1')
@@ -29,7 +27,8 @@ running_instances = ec2.instances.filter(Filters=[{
 
 ec2info = defaultdict()
 for instance in running_instances:
-    for tag in instance.tags:
+    name = "NA"
+    for tag in instance.tags or []:
         if 'Name'in tag['Key']:
             name = tag['Value']
     # Add instance info to a dictionary         

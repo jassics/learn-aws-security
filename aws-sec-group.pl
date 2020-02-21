@@ -15,7 +15,6 @@ my $decoded   = decode_json($jsoni);
 my %hash_ip   = ();
 my @reserv    = @{ $decoded->{'Reservations'} };
 
-
 # saving security group attached to each public IP
 foreach my $f ( @reserv ) {
     my @instances = @{ $f->{'Instances'} };
