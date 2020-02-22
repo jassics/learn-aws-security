@@ -1,0 +1,47 @@
+Parameters:
+  NameOfService:
+    Description: "The name of the service this stack will be used for"
+    Type: String
+  KeyName:
+    Description: "Name of an existing EC2 keypair to enable SSH access into the server"
+    Type: AWS::EC2::KeyPair::KeyName
+Mappings:
+  RegionMap:
+    us-east-1:
+      AMI: ami-1853ac65
+    us-west-1:
+      AMI: ami-bf5540df
+    eu-west-1:
+      AMI: ami-3bfab942
+    ap-southeast-1:
+      AMI: ami-e2adf99e
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId:
+        Fn::FindInMap: # Intrinsic function to use mappings
+          - RegionMap  # Name of the mapping
+          - !Ref AWS::Region # First Level Key, Psuedo parameter here to get the region name
+          - AMI # Second Level Key in RegionMap mapping
+      Tags:
+        - Key: Name
+          Value: !Ref NameOfService
+      KeyName: !Ref KeyName
+      SecurityGroups:
+        - !Ref sshSecurityGroup # Multiple resource
+  sshSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: "Enable port 22 to specific IP"
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 10.0.0.0/24
+Outputs: # get access to the output like EC2 public dns name here.
+  ServerDns:
+    Value: !GetAtt
+      - Ec2Instance
+      - PublicDnsName
