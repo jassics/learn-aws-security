@@ -1,9 +1,0 @@
-Resources:
-  Ec2Instance:
-    Type: 'AWS::EC2::Instance'
-    Properties:
-      InstanceType: t2.micro
-      ImageId: ami-062f7200baf2fa504 #Amazon Linux AMI
-      Tags:
-        - Key: Name
-          Value: A simple example of create EC2 using CF template
